@@ -11,7 +11,7 @@ bashio::log.info "Generating frpc.toml from UI config"
 
 cat <<EOF > $CONFIG_PATH
 serverAddr = "$(bashio::config 'serverAddr')"
-serverPort = "7000"
+serverPort = 7000
 auth.method = "token"
 auth.token = "yourStrongSecretToken"
 
