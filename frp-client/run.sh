@@ -19,11 +19,6 @@ log.to = "/share/frpc.log"
 log.level = "trace"
 log.maxDays = 3
 
-# webServer.addr = "0.0.0.0"
-# webServer.port = $(bashio::config 'webServerPort')
-# webServer.user = "$(bashio::config 'webServerUser')"
-# webServer.password = "$(bashio::config 'webServerPassword')"
-
 [[proxies]]
 name = "Home Assistant"
 type = "tcp"
