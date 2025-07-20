@@ -1,7 +1,7 @@
-name: "FRP FORK Client (Poison Edition)"
-description: "You can use this tool to achieve remote access to local Home Assistant OS by port forwarding"
+name: "FRP Client Addon (smartify.lv)"
+description: "You can use this tool to achieve remote access to local Home Assistant"
 version: "1.0.1"
-slug: "frp_client_max"
+slug: "frp_client_smartify"
 host_network: true
 startup: application
 boot: "auto"
@@ -19,20 +19,20 @@ arch:
   - armv7
   - i386
 options:
-  serverAddr: "xxxx.lv.clients.smartify.lv"
-  serverPort: 7000
+  serverAddr: "xxxx.xx.clients.smartify.lv"
+#  serverPort: 7000
   remotePort: 8101
-  authToken: "ReplaceWithSecretToken"
-  webServerPort: 7500
-  webServerUser: "admin"
-  webServerPassword: "WebPass"
-  proxyName: "homeassistant"
+#  authToken: "SecretToken"
+#  webServerPort: 7500
+#  webServerUser: "admin"
+#  webServerPassword: "WebPass"
+#  proxyName: "homeassistant"
 schema:
   serverAddr: str
-  serverPort: int
+#  serverPort: int
   remotePort: int
-  authToken: str
-  webServerPort: int
-  webServerUser: str
-  webServerPassword: str
-  proxyName: str
+#  authToken: str
+#  webServerPort: int
+#  webServerUser: str
+#  webServerPassword: str
+#  proxyName: str
