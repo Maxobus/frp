@@ -11,21 +11,21 @@ bashio::log.info "Generating frpc.toml from UI config"
 
 cat <<EOF > $CONFIG_PATH
 serverAddr = "$(bashio::config 'serverAddr')"
-serverPort = $(bashio::config 'serverPort')
+serverPort = "7000"
 auth.method = "token"
-auth.token = "$(bashio::config 'authToken')"
+auth.token = "yourStrongSecretToken"
 
 log.to = "/share/frpc.log"
 log.level = "trace"
 log.maxDays = 3
 
-webServer.addr = "0.0.0.0"
-webServer.port = $(bashio::config 'webServerPort')
-webServer.user = "$(bashio::config 'webServerUser')"
-webServer.password = "$(bashio::config 'webServerPassword')"
+# webServer.addr = "0.0.0.0"
+# webServer.port = $(bashio::config 'webServerPort')
+# webServer.user = "$(bashio::config 'webServerUser')"
+# webServer.password = "$(bashio::config 'webServerPassword')"
 
 [[proxies]]
-name = "$(bashio::config 'proxyName')"
+name = "Home Assistant"
 type = "tcp"
 transport.useEncryption = true
 transport.useCompression = true
