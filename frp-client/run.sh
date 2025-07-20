@@ -13,7 +13,7 @@ cat <<EOF > $CONFIG_PATH
 serverAddr = "$(bashio::config 'serverAddr')"
 serverPort = 7000
 auth.method = "token"
-auth.token = "yourStrongSecretToken"
+auth.token = "22d8ce655c6a6e8286a659618f70adb8"
 
 log.to = "/share/frpc.log"
 log.level = "trace"
