@@ -1,6 +1,8 @@
 #!/usr/bin/env bashio
 WAIT_PIDS=()
 CONFIG_PATH='/share/frpc.toml'
+HA_IP=$(bashio::info.ip_address)
+HA_ID=$(bashio::config 'id')
 
 function stop_frpc() {
     bashio::log.info "Shutdown frpc client"
@@ -22,13 +24,13 @@ log.level = "trace"
 log.maxDays = 3
 
 [[proxies]]
-name = "smartify_new-$(bashio::config 'id')"
+name = "smartify_new-$HA_ID"
 type = "tcp"
 transport.useEncryption = true
 transport.useCompression = true
 remotePort = $(bashio::config 'remotePort')
 localPort = 8123
-localIP = "$(bashio::info.ip_address)"
+localIP = "$HA_IP"
 # localIP = "0.0.0.0"
 EOF
 
