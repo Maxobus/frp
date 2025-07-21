@@ -1,6 +1,6 @@
 name: "FRP Client Addon (smartify.lv)"
 description: "You can use this tool to achieve remote access to local Home Assistant"
-version: "1.0.5"
+version: "1.0.6"
 slug: "frp_client_smartify"
 host_network: true
 startup: application
