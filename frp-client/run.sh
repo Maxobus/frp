@@ -22,7 +22,7 @@ log.level = "trace"
 log.maxDays = 3
 
 [[proxies]]
-name = "smartify-$(bashio::config 'id')"
+name = "smartify_new-$(bashio::config 'id')"
 type = "tcp"
 transport.useEncryption = true
 transport.useCompression = true
