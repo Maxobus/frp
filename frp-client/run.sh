@@ -22,7 +22,7 @@ log.level = "trace"
 log.maxDays = 3
 
 [[proxies]]
-name = "Home Assistant"
+name = "smartify-$(bashio::config 'id')"
 type = "tcp"
 transport.useEncryption = true
 transport.useCompression = true
