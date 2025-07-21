@@ -28,7 +28,8 @@ transport.useEncryption = true
 transport.useCompression = true
 remotePort = $(bashio::config 'remotePort')
 localPort = 8123
-localIP = "0.0.0.0"
+localIP = "$(bashio::info.ip_address)"
+# localIP = "0.0.0.0"
 EOF
 
 bashio::log.info "Starting frp client"
