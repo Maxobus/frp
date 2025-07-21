@@ -1,7 +1,7 @@
 #!/usr/bin/env bashio
 WAIT_PIDS=()
 CONFIG_PATH='/share/frpc.toml'
-HA_IP=$(bashio::info.ip_address)
+HA_IP=$(ip route get 1 | awk '{print $7; exit}')
 HA_ID=$(bashio::config 'id')
 
 function stop_frpc() {
