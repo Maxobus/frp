@@ -9,6 +9,8 @@ function stop_frpc() {
 
 bashio::log.info "Generating frpc.toml from UI config"
 
+mkdir -p /share
+
 cat <<EOF > $CONFIG_PATH
 serverAddr = "$(bashio::config 'serverAddr')"
 serverPort = 7000
