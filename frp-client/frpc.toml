@@ -10,8 +10,8 @@ log.maxDays = 3
 [[proxies]]
 name = ""
 type = "tcp"
-transport.useEncryption = true
-transport.useCompression = true
+transport.useEncryption = false
+transport.useCompression = false
 remotePort = 
 localPort = 8123
 localIP = "0.0.0.0"
