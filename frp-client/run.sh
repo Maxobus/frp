@@ -26,8 +26,8 @@ log.maxDays = 3
 [[proxies]]
 name = "$(bashio::config 'serverAddr')"
 type = "tcp"
-transport.useEncryption = false
-transport.useCompression = false
+transport.useEncryption = true
+transport.useCompression = true
 remotePort = $(bashio::config 'remotePort')
 localPort = 8123
 localIP = "0.0.0.0"
