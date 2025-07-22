@@ -2,7 +2,6 @@
 WAIT_PIDS=()
 CONFIG_PATH='/share/frpc.toml'
 HA_IP=$(ip route get 1 | awk '{print $7; exit}')
-# HA_ID=$(bashio::config 'id')
 
 function stop_frpc() {
     bashio::log.info "Shutdown frpc client"
@@ -16,6 +15,7 @@ mkdir -p /share
 cat <<EOF > $CONFIG_PATH
 serverAddr = "$(bashio::config 'serverAddr')"
 serverPort = 7000
+
 auth.method = "token"
 auth.token = "22d8ce655c6a6e8286a659618f70adb8"
 
@@ -26,12 +26,12 @@ log.maxDays = 3
 [[proxies]]
 name = "$(bashio::config 'serverAddr')"
 type = "tcp"
-transport.useEncryption = true
-transport.useCompression = true
+transport.useEncryption = false
+transport.useCompression = false
 remotePort = $(bashio::config 'remotePort')
 localPort = 8123
-# localIP = "0.0.0.0"
-localIP = "$HA_IP"
+localIP = "0.0.0.0"
+# localIP = "$HA_IP"
 EOF
 
 bashio::log.info "Starting frp client"
